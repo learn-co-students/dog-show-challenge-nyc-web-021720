@@ -2,9 +2,9 @@
   "dogs": [
     {
       "id": 1,
-      "name": "fuckyourdog",
-      "breed": "Dachshund",
-      "sex": "female"
+      "name": "inlovewithmyCoco",
+      "breed": "cocopowder",
+      "sex": "female/male"
     },
     {
       "id": 2,
@@ -14,8 +14,8 @@
     },
     {
       "id": 3,
-      "name": "fuckyourdog",
-      "breed": "Dachshund",
+      "name": "Mistywhat",
+      "breed": "Patterdale Terrier",
       "sex": "female"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": 12,
-      "name": "Misty",
+      "name": "Mistywhat",
       "breed": "Patterdale Terrier",
       "sex": "female"
     },
@@ -80,9 +80,9 @@
     },
     {
       "id": 14,
-      "name": "Coco",
-      "breed": "Maltese",
-      "sex": "female"
+      "name": "inlovewithmyCoco",
+      "breed": "cocopowder",
+      "sex": "female/male"
     },
     {
       "id": 15,

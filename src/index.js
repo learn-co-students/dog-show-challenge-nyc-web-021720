@@ -24,7 +24,7 @@ function renderDogs(dog){
 
  
     table.innerHTML +=`
-    <tr data-id=${dog.id}>
+    <tr id=${dog.id} class="table">
         <td>${dog.name}</td> 
         <td>${dog.breed}</td>
         <td>${dog.sex}</td> 
@@ -37,9 +37,10 @@ function renderDogs(dog){
 document.addEventListener("click",function(e){
     if(e.target.innerText==="Edit"){
 
-        form.name.value=e.target.parentNode.parentNode.firstElementChild.innerText
-        form.breed.value=e.target.parentNode.parentNode.firstElementChild.nextElementSibling.innerText
-        form.sex.value=e.target.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerText
+        let val=e.target.parentNode.parentNode.firstElementChild
+        form.name.value=val.innerText
+        form.breed.value=val.nextElementSibling.innerText
+        form.sex.value=val.nextElementSibling.nextElementSibling.innerText
 
 
         submitDog(e.target)
@@ -48,20 +49,11 @@ document.addEventListener("click",function(e){
 
 
 function submitDog(btn){
-            let id=btn.id
-            // const name=btn.parentNode.parentNode.firstElementChild.innerText
-            // const breed=btn.parentNode.parentNode.firstElementChild.nextElementSibling.innerText
-            // const sex=btn.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerText
-            // console.dir(sex)
-            
-            
+           
 
             form.addEventListener("submit", function (e){
                 e.preventDefault();
-            // form.name= name
-            // form.breed=breed
-            // form.sex=sex
-
+                let id=btn.id
 
             fetch(`http://localhost:3000/dogs/${id}`,{
                 method: "PATCH",
@@ -77,7 +69,8 @@ function submitDog(btn){
             })
             .then(resp => resp.json())
             .then(data => {
-                let dog=document.querySelector(`[data-id="${data.id}"]`)
+                // let dog=document.querySelector(`[data-id="${data.id}"]`)
+                let dog=document.querySelector(".table")
 
                 dog.innerHTML =`
                 <tr data-id=${data.id}>
@@ -91,6 +84,7 @@ function submitDog(btn){
 
 
             })  
+         
         }
 
 });
